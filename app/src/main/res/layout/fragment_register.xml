@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="regViewModel"
+            type="run.demo01.doubandemo.login.viewmodel.RegViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".login.fragment.RegisterFragment"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+        <TextView
+            android:id="@+id/backTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textSize="17sp"
+            android:textColor="@color/blue"
+            android:layout_gravity="center_vertical"
+            android:drawableStart="@drawable/common_ic_back"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/common_et_bg_grey"
+            android:hint="请输入邮箱"
+            android:drawableStart="@drawable/register_ic_email"
+            android:layout_marginTop="200dp"
+            android:text="@={regViewModel.email}"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/common_et_bg_grey"
+            android:hint="请输入账号"
+            android:drawableStart="@drawable/common_ic_account"
+            android:layout_marginTop="20dp"
+            android:text="@={regViewModel.name}"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/common_et_bg_grey"
+            android:hint="请输入密码"
+            android:drawableStart="@drawable/common_ic_pwd"
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword"
+            android:text="@={regViewModel.password}"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/common_btn_bg_blue"
+            android:onClick="@{()->regViewModel.register()}"
+            />
+
+    </LinearLayout>
+</layout>
