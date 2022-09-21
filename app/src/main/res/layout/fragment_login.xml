@@ -42,6 +42,7 @@
             android:hint="请输入密码"
             android:drawableStart="@drawable/common_ic_pwd"
             android:layout_marginTop="20dp"
+            android:inputType="textPassword"
             android:text="@={loginViewModel.password}"
             />
 
